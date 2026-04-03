@@ -1,0 +1,136 @@
+
+.carousel-inner img{
+	-webkit-filter: grayscale(90%);
+	filter: grayscale(90%);			/* 将图片设置为黑白色 */
+}
+
+
+.container {
+    padding: 80px 120px;
+}
+.person {
+    border: 10px solid transparent;
+    opacity: 0.7;
+}
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+.bg-1{
+	background-color: #2d2d30;
+	color: #bdbdbd;
+}
+.bg-1 h3{
+	color: #fff;
+}
+.bg-1 p{
+	font-style: italic;
+}
+/* 移去列表组的边框圆角 */
+.list-group-item:first-child{
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.list-group-item:last-child{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+/* 移除卡片的边框和增加内边距 */
+.card{
+	padding:0 0 15px 0;
+	border: none;
+	border-radius: 0;
+}
+/* 改变卡片中p的颜色和上外边距 */
+.card p{
+	margin-top: 15px;
+	color: #555;
+}
+.card h5{
+	font-style: italic;
+	color: #555;
+}
+
+/* 设置按钮的背景颜色和字的颜色、内边距和边框，动画时间 */
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #f1f1f1;
+    border-radius: 0;
+    transition: .2s;
+}
+
+/* 当鼠标滑过按钮和得到焦点时，按钮的颜色。按钮会从黑色变为白色时有渐变效果 */
+.btn:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+}
+
+/*  给文本和标题增加深灰色背景*/
+.modal-header, h4, .close {
+    background-color: #333;
+    color: #fff !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-header, .modal-body {
+    padding: 40px 50px;
+}
+
+.navbar {
+	background-color: #2d2d3;
+	border: 0;
+	font-size: 18px;
+	letter-spacing: 0.5rem !important;
+	opacity: 0.9;
+}
+/* 添加文字间距后，文字离右边边距多了0.5rem */
+.navbar .navbar-nav .nav-item .nav-link{
+	padding: 1rem 1rem 1rem 1.5rem;
+}
+.navbar .navbar-nav .nav-item .nav-link,
+.navbar .navbar-brand {
+	color: #d5d5d5 !important;
+}
+/* 鼠标指针经过导航条时白底黑字，a标签为active时白底黑字 */
+.navbar .navbar-nav .nav-item .nav-link:hover,
+.navbar .navbar-nav .nav-item .nav-link.active{
+	color: #000 !important;
+	background-color: #fff !important;
+}
+/* 修改菜单显示位置 */
+.dropdown-menu{
+	right: 0;
+	left: auto;
+}
+/* 修改菜单外观，与导航栏风格一致 */
+.show .dropdown-menu a{
+	color: #000 !important;
+}
+/* 鼠标经过菜单项时,背景变红 */
+.dropdown-item:hover,.dropdown-item:focus{
+	background-color: red !important;
+}
+/* 鼠标经过菜单项时,文字变白 */
+.dropdown-item a:hover,.dropdown-item a:focus{
+	color: #fff !important;
+	background-color: red !important;
+}
+
+footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}

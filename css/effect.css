@@ -1,0 +1,577 @@
+/* 自定义震撼样式 */
+:root {
+    --primary-color: #ff4d4d;
+    --secondary-color: #ffcc00;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(26, 26, 46, 0.95) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 1030;
+}
+
+.navbar.scrolled {
+    padding: 5px 0;
+    background-color: rgba(10, 10, 20, 0.98) !important;
+}
+
+.navbar-brand img {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    margin: 0 5px;
+    padding: 8px 15px !important;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--secondary-color) !important;
+    background-color: rgba(255, 204, 0, 0.1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* 视频轮播样式 */
+.video-carousel {
+    margin-top: 76px;
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.video-carousel .carousel-inner {
+    height: 100%;
+}
+
+.video-carousel .carousel-item {
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.video-carousel video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.video-carousel .carousel-caption {
+    bottom: 30%;
+    text-align: left;
+    padding: 30px;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.video-carousel .carousel-item.active .carousel-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.video-carousel .carousel-caption h3 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.video-carousel .carousel-caption p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.video-carousel .carousel-indicators {
+    bottom: 20px;
+}
+
+.video-carousel .carousel-indicators li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.video-carousel .carousel-indicators li.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.video-carousel .carousel-control-prev,
+.video-carousel .carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.video-carousel .carousel-control-prev:hover,
+.video-carousel .carousel-control-next:hover {
+    background-color: var(--secondary-color);
+    opacity: 1;
+}
+
+/* 视频控制按钮 */
+.video-controls {
+    position: absolute;
+    bottom: 80px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.video-controls button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.video-controls button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    transform: scale(1.1);
+}
+
+/* 成员模块样式 */
+#band {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--dark-color) 0%, #16213e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#band::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffcc00" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+#band h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+}
+
+#band h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+
+#band h3:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.person {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid transparent;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.person:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--secondary-color);
+    box-shadow: 0 15px 30px rgba(255, 204, 0, 0.4);
+}
+
+.my-collspase {
+    transition: all 0.5s ease;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.collapse.show.my-collspase {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 巡演模块样式 */
+#tour {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#tour::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ff4d4d" fill-opacity="0.1" d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,112C672,107,768,149,864,154.7C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* 优化巡演卡片字体效果 */
+.card-title {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary-color);
+    transform: scaleX(0.8);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-text {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+.btn-dark {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-dark:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* 模态框样式 */
+.modal-content {
+    background-color: var(--dark-color);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h4 {
+    color: var(--secondary-color);
+}
+
+.close {
+    color: white;
+    opacity: 0.8;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+    color: white;
+}
+
+.btn-block {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+}
+
+/* 联系我们模块样式 */
+#contact {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ff4d4d" fill-opacity="0.1" d="M0,160L48,170.7C96,181,192,203,288,186.7C384,171,480,117,576,112C672,107,768,149,864,154.7C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+}
+
+#contact h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+#contact p i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+/* 联系我们表单样式 */
+.contact-form .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 204, 0, 0.25);
+    color: white;
+}
+
+.contact-form .btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
+}
+
+/* 脚注样式 */
+footer {
+    padding: 50px 0;
+    background-color: #0a0a14;
+}
+
+.bi-chevron-up {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.bi-chevron-up:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+/* 动画效果 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .video-carousel .carousel-caption h3 {
+        font-size: 2.5rem;
+    }
+
+    .video-carousel .carousel-caption p {
+        font-size: 1.2rem;
+    }
+
+    #band h3,
+    #tour h3,
+    #contact h3 {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .video-controls {
+        bottom: 60px;
+        right: 10px;
+    }
+
+    .video-controls button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
